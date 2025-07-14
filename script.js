@@ -38,8 +38,10 @@ async function getAIResponse(userText) {
   // No need for API key in frontend when using Worker
 
   // Prepare request body
+  // max_tokens controls the length of the AI's reply. Higher value = longer replies.
   const body = {
     messages: messages,
+    max_tokens: 800, // Increased from 300 to 800 for longer, complete responses
   };
 
   try {
